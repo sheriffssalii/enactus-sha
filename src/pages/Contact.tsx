@@ -7,21 +7,21 @@ const Contact = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://facebook.com/enactusshorouk",
+      url: "https://www.facebook.com/Enactus.ShA",
       color: "hover:text-blue-600",
       bgColor: "hover:bg-blue-50"
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/enactusshorouk",
+      url: "https://www.instagram.com/enactus_shoroukacademy/",
       color: "hover:text-pink-600",
       bgColor: "hover:bg-pink-50"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/company/enactusshorouk",
+      url: "https://linkedin.com/company/enactus-alshorouk-academy",
       color: "hover:text-blue-700",
       bgColor: "hover:bg-blue-50"
     }
@@ -31,13 +31,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      info: "enactus@shorouk.edu.eg",
+      info: "enactussha20@gmail.com",
       description: "Send us your questions or collaboration ideas"
     },
     {
       icon: Phone,
       title: "Call Us",
-      info: "+20 101 234 5678",
+      info: "+20 115 270 9088",
       description: "Available during business hours"
     },
     {

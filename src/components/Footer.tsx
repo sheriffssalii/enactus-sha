@@ -1,21 +1,36 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  SiFacebook,
+  SiInstagram,
+  SiLinkedin,
+  SiTiktok,
+} from "react-icons/si"; // using react-icons simple-icons pack
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: "Home", path: "/" },
-    { name: "Teams", path: "/teams" },
-    { name: "Our History", path: "/history" },
-    { name: "Join Us", path: "/join" },
-    { name: "Contact", path: "/contact" },
-  ];
-
+  
+const quickLinks = () => {
+    return (
+        <div className="footer">
+            <div className="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+                    <li><Link to="/teams" onClick={() => window.scrollTo(0, 0)}>Teams</Link></li>
+                    <li><Link to="/history" onClick={() => window.scrollTo(0, 0)}>Our History</Link></li>
+                    <li><Link to="/join" onClick={() => window.scrollTo(0, 0)}>Join Us</Link></li>
+                    <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
+                </ul>
+            </div>
+        </div>
+    );
+};
   const socialLinks = [
-    { name: "Facebook", icon: Facebook, url: "https://facebook.com/enactusshorouk" },
-    { name: "Instagram", icon: Instagram, url: "https://instagram.com/enactusshorouk" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/company/enactusshorouk" },
+    { name: "Facebook", icon: SiFacebook, url: "https://www.facebook.com/Enactus.ShA" },
+    { name: "Instagram", icon: SiInstagram, url: "https://www.instagram.com/enactus_shoroukacademy/" },
+    { name: "LinkedIn", icon: SiLinkedin, url: "https://linkedin.com/company/enactus-alshorouk-academy" },
+    { name: "TikTok", icon: SiTiktok, url: "https://www.tiktok.com/@enactus.sh.a?is_from_webapp=1&sender_device=pc" },
   ];
 
   return (
@@ -25,8 +40,8 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">E</span>
+              <div className="w-8 h-8">
+                 <img src="/EnactusLogo.png" alt="Enactus Logo" className="w-full h-full rounded-full" />
               </div>
               <span className="font-poppins font-semibold text-lg text-foreground">
                 Enactus Shorouk Academy
@@ -53,28 +68,18 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-poppins font-semibold text-foreground mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground font-roboto hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h3 className="font-poppins font-semibold text-foreground mb-4">Quick Links</h3>
+              {quickLinks()}
+            </div>
+
 
           {/* Contact Info */}
           <div>
             <h3 className="font-poppins font-semibold text-foreground mb-4">Contact</h3>
             <div className="space-y-2 text-muted-foreground font-roboto">
-              <p>enactus@shorouk.edu.eg</p>
-              <p>+20 101 234 5678</p>
+              <p>enactussha20@gmail.com</p>
+              <p>+20 115 270 9088</p>
               <p>Shorouk Academy<br />Cairo, Egypt</p>
             </div>
           </div>
@@ -84,9 +89,6 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground font-roboto text-sm">
             © {currentYear} Enactus Shorouk Academy. All rights reserved.
-          </p>
-          <p className="text-muted-foreground font-roboto text-sm mt-2 md:mt-0">
-            Made with ❤️ for social impact
           </p>
         </div>
       </div>

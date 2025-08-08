@@ -81,41 +81,50 @@ const JoinUs = () => {
     setValue("teams", updatedTeams);
   };
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate form submission to Google Sheets
-      // In a real implementation, you would use Google Apps Script, SheetDB, or NocodeAPI
-      const formData = {
-        ...data,
-        teams: data.teams.map(teamId => teams.find(t => t.id === teamId)?.name).join(", "),
-        interviewSlot: interviewSlots.find(slot => slot.id === data.interviewSlot)?.label,
-        timestamp: new Date().toISOString(),
-      };
+ const onSubmit = async (data: FormData) => {
+  setIsSubmitting(true);
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log("Form submitted:", formData);
-      
-      setIsSubmitted(true);
-      toast({
-        title: "Application submitted successfully!",
-        description: "We'll review your application and contact you soon.",
-      });
-      
-      reset();
-    } catch (error) {
-      toast({
-        title: "Submission failed",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  try {
+    const formData = {
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      teams: data.teams.map(teamId => teams.find(t => t.id === teamId)?.name).join(", "),
+      interviewSlot: interviewSlots.find(slot => slot.id === data.interviewSlot)?.label,
+      timestamp: new Date().toISOString(),
+    };
+
+    //  Replace this with your actual deployed Web App URL
+    const googleScriptURL = "https://script.google.com/macros/s/AKfycbyvm3Elg5ABzAnY3IC1Imecwv7Sfd4mGWkK12brizQIgw8S-S2ZEPTu4EyQ4J2aXoMitw/exec";
+
+    const response = await fetch(googleScriptURL, {
+      method: "POST",
+      mode: "no-cors", // required for Apps Script (Apps Script doesn't return CORS headers)
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    //  Since mode: "no-cors" doesn't return proper status, we assume success here
+    setIsSubmitted(true);
+    toast({
+      title: "Application submitted successfully!",
+      description: "We'll review your application and contact you soon.",
+    });
+
+    reset();
+  } catch (error) {
+    toast({
+      title: "Submission failed",
+      description: "Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   if (isSubmitted) {
     return (
@@ -351,7 +360,7 @@ const JoinUs = () => {
               <div className="space-y-2 text-sm text-muted-foreground font-roboto">
                 <p>1. We'll review your application within 5 business days</p>
                 <p>2. Qualified candidates will be contacted for interviews</p>
-                <p>3. Final selections will be announced via email</p>
+                <p>3. Final selections will be announced via WhatsApp</p>
                 <p>4. New members will receive onboarding information</p>
               </div>
             </CardContent>

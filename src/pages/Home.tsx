@@ -9,7 +9,6 @@ const Home = () => {
     { icon: Users, value: "200+", label: "Active Students" },
     { icon: Target, value: "15+", label: "Social Projects" },
     { icon: Globe, value: "10", label: "Years of Impact" },
-    { icon: TrendingUp, value: "50k+", label: "Lives Impacted" },
   ];
 
   const containerVariants = {
@@ -50,8 +49,16 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-8"
             >
-              <span className="text-primary-foreground font-bold text-3xl">E</span>
-            </motion.div>
+<div className="w-15 h-10 bg-white rounded-full p-1">
+  <img 
+    src="/EnactusLogo.png" 
+    alt="Enactus Logo" 
+    className="w-full h-full rounded-full object-contain" 
+  />
+</div>
+
+      
+           </motion.div>
             
             <h1 className="text-4xl md:text-6xl font-poppins font-bold text-foreground mb-6">
               We See
@@ -191,7 +198,7 @@ const Home = () => {
               Our Impact in Numbers
             </motion.h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center md:justify-items-stretch">
               {kpis.map((kpi, index) => (
                 <motion.div
                   key={index}

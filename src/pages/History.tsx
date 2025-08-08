@@ -8,75 +8,86 @@ const History = () => {
     {
       year: "2014",
       title: "Foundation",
-      description: "Enactus Shorouk Academy was established with a vision to create positive social impact through entrepreneurial action.",
+      description:
+        "Enactus Shorouk Academy was established with a vision to create positive social impact through entrepreneurial action.",
       icon: Calendar,
-      highlight: false
+      highlight: false,
     },
     {
       year: "2016",
       title: "First National Competition",
-      description: "Our team participated in the first Enactus Egypt National Competition, gaining valuable experience and connections.",
+      description:
+        "Our team participated in the first Enactus Egypt National Competition, gaining valuable experience and connections.",
       icon: Trophy,
-      highlight: false
+      highlight: false,
     },
     {
       year: "2018",
       title: "Community Expansion",
-      description: "Reached 100+ active members and launched our first major community development project.",
+      description:
+        "Reached 100+ active members and launched our first major community development project.",
       icon: Users,
-      highlight: false
+      highlight: false,
     },
     {
       year: "2020",
       title: "Digital Transformation",
-      description: "Adapted to online operations during the pandemic, launching digital literacy programs for underserved communities.",
+      description:
+        "Adapted to online operations during the pandemic, launching digital literacy programs for underserved communities.",
       icon: Target,
-      highlight: false
+      highlight: false,
     },
     {
       year: "2022",
       title: "National Recognition",
-      description: "Achieved top 5 ranking in Enactus Egypt National Competition with our sustainable agriculture project.",
+      description:
+        "Achieved top 5 ranking in Enactus Egypt National Competition with our sustainable agriculture project.",
       icon: Trophy,
-      highlight: true
+      highlight: true,
     },
     {
       year: "2023",
       title: "Excellence Award",
-      description: "Won 'Best Innovation Project' at the National Competition for our digital marketplace connecting rural farmers with urban consumers.",
+      description:
+        "Won 'Best Innovation Project' at the National Competition for our digital marketplace connecting rural farmers with urban consumers.",
       icon: Trophy,
-      highlight: true
+      highlight: true,
     },
     {
       year: "2024",
       title: "10 Years of Impact",
-      description: "Celebrating a decade of social entrepreneurship with over 50,000 lives impacted and 15+ successful projects.",
+      description:
+        "Celebrating a decade of social entrepreneurship with over 50,000 lives impacted and 15+ successful projects.",
       icon: Calendar,
-      highlight: true
-    }
+      highlight: true,
+    },
   ];
 
   const achievements = [
     {
       title: "Top 5 National Ranking",
       year: "2022 & 2023",
-      description: "Consistently ranked among the top 5 teams in Egypt for two consecutive years"
+      description:
+        "Consistently ranked among the top 5 teams in Egypt for two consecutive years",
     },
     {
       title: "Best Innovation Project",
       year: "2023",
-      description: "National Competition winner for our digital agriculture marketplace platform"
+      description:
+        "National Competition winner for our digital agriculture marketplace platform",
     },
     {
       title: "Social Impact Award",
       year: "2022",
-      description: "Recognized for outstanding community impact in sustainable agriculture"
+      description:
+        "Recognized for outstanding community impact in sustainable agriculture",
     },
     {
       title: "Outstanding Presentation",
       year: "2023",
-      description: "Excellence in presentation and storytelling at the National Competition"
-    }
+      description:
+        "Excellence in presentation and storytelling at the National Competition",
+    },
   ];
 
   const containerVariants = {
@@ -114,7 +125,7 @@ const History = () => {
             Our <span className="text-primary">Journey</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-roboto">
-            Ten years of social entrepreneurship, innovation, and impact. From humble beginnings 
+            Ten years of social entrepreneurship, innovation, and impact. From humble beginnings
             to national recognition, here's our story.
           </p>
         </motion.div>
@@ -138,33 +149,50 @@ const History = () => {
             className="relative"
           >
             {/* Timeline line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-primary/30" />
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-primary/30" />
 
             <div className="space-y-12">
               {timelineEvents.map((event, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`relative flex items-center ${
+                  className={`relative flex flex-col md:flex-row items-start ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10" />
+                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10" />
 
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
-                    <Card className={`${event.highlight ? "border-primary shadow-lg" : ""} hover:shadow-xl transition-shadow duration-300`}>
+                  {/* Card */}
+                  <div
+                    className={`w-full md:w-5/12 ${
+                      index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                    }`}
+                  >
+                    <Card
+                      className={`${
+                        event.highlight ? "border-primary shadow-lg" : ""
+                      } hover:shadow-xl transition-shadow duration-300`}
+                    >
                       <CardContent className="p-6">
                         <div className="flex items-center space-x-3 mb-3">
-                          <div className={`w-10 h-10 rounded-full ${
-                            event.highlight ? "bg-primary" : "bg-primary/20"
-                          } flex items-center justify-center`}>
-                            <event.icon className={`w-5 h-5 ${
-                              event.highlight ? "text-primary-foreground" : "text-primary"
-                            }`} />
+                          <div
+                            className={`w-10 h-10 rounded-full ${
+                              event.highlight ? "bg-primary" : "bg-primary/20"
+                            } flex items-center justify-center`}
+                          >
+                            <event.icon
+                              className={`w-5 h-5 ${
+                                event.highlight
+                                  ? "text-primary-foreground"
+                                  : "text-primary"
+                              }`}
+                            />
                           </div>
                           <div>
-                            <Badge variant={event.highlight ? "default" : "secondary"}>
+                            <Badge
+                              variant={event.highlight ? "default" : "secondary"}
+                            >
                               {event.year}
                             </Badge>
                           </div>
@@ -179,7 +207,7 @@ const History = () => {
                     </Card>
                   </div>
 
-                  {/* Empty space for the other side */}
+                  {/* Empty space for desktop layout */}
                   <div className="hidden md:block w-5/12" />
                 </motion.div>
               ))}
@@ -237,12 +265,13 @@ const History = () => {
           transition={{ duration: 0.8 }}
           className="mt-20 text-center"
         >
+
           <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
             <CardContent className="p-8">
               <h3 className="text-2xl font-poppins font-bold text-foreground mb-6">
                 A Decade of Impact
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-64">
                 <div>
                   <div className="text-3xl font-poppins font-bold text-primary mb-2">10</div>
                   <div className="text-sm text-muted-foreground font-roboto">Years</div>
@@ -252,11 +281,7 @@ const History = () => {
                   <div className="text-sm text-muted-foreground font-roboto">Projects</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-poppins font-bold text-primary mb-2">50k+</div>
-                  <div className="text-sm text-muted-foreground font-roboto">Lives Impacted</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-poppins font-bold text-primary mb-2">200+</div>
+                  <div className="text-3xl font-poppins font-bold text-primary mb-2">2000+</div>
                   <div className="text-sm text-muted-foreground font-roboto">Alumni</div>
                 </div>
               </div>

@@ -15,14 +15,14 @@ const Teams = () => {
       name: "Human Resources",
       icon: Users,
       description: "Building and nurturing our community of passionate students. We handle recruitment, team development, and creating a positive organizational culture.",
-      responsibilities: ["Recruitment & Selection", "Team Building", "Training Programs", "Performance Management"],
+      responsibilities: ["Recruitment & Selection", "Team Building", "Training Programs", "Performance Management","Learning & Development"],
       color: "from-blue-500/20 to-blue-600/20"
     },
     {
       name: "Multimedia",
       icon: Camera,
       description: "Bringing our stories to life through visual content. We create compelling videos, photography, and digital assets that showcase our impact.",
-      responsibilities: ["Video Production", "Photography", "Graphic Design", "Content Creation"],
+      responsibilities: ["Video Production", "Photography", "Graphic Design"],
       color: "from-purple-500/20 to-purple-600/20"
     },
     {
@@ -50,7 +50,7 @@ const Teams = () => {
       name: "Marketing",
       icon: Megaphone,
       description: "Amplifying our message and expanding our reach. We develop marketing strategies to promote our projects and attract new members.",
-      responsibilities: ["Social Media Management", "Brand Development", "Event Marketing", "Digital Campaigns"],
+      responsibilities: ["Social Media Management", "Brand Development", "Event Marketing", "Digital Campaigns","Content Creation"],
       color: "from-pink-500/20 to-pink-600/20"
     }
   ];
