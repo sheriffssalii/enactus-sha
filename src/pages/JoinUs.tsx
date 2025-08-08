@@ -81,32 +81,37 @@ const JoinUs = () => {
     setValue("teams", updatedTeams);
   };
 
- const onSubmit = async (data: FormData) => {
+const onSubmit = async (data: FormData) => {
   setIsSubmitting(true);
 
   try {
+    // Format team names from selected IDs
+    const selectedTeamNames = data.teams.map(teamId =>
+      teams.find(t => t.id === teamId)?.name || ""
+    );
+
     const formData = {
       fullName: data.fullName,
       email: data.email,
       phoneNumber: data.phoneNumber,
-      teams: data.teams.map(teamId => teams.find(t => t.id === teamId)?.name).join(", "),
-      interviewSlot: interviewSlots.find(slot => slot.id === data.interviewSlot)?.label,
-      timestamp: new Date().toISOString(),
+      firstTeam: selectedTeamNames[0] || "",
+      secondTeam: selectedTeamNames[1] || "",
+      thirdTeam: selectedTeamNames[2] || "",
+      interviewSlot: interviewSlots.find(slot => slot.id === data.interviewSlot)?.label || "",
     };
 
-    //  Replace this with your actual deployed Web App URL
+    // Your deployed Apps Script Web App URL
     const googleScriptURL = "https://script.google.com/macros/s/AKfycbyvm3Elg5ABzAnY3IC1Imecwv7Sfd4mGWkK12brizQIgw8S-S2ZEPTu4EyQ4J2aXoMitw/exec";
 
-    const response = await fetch(googleScriptURL, {
+    await fetch(googleScriptURL, {
       method: "POST",
-      mode: "no-cors", // required for Apps Script (Apps Script doesn't return CORS headers)
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     });
 
-    //  Since mode: "no-cors" doesn't return proper status, we assume success here
     setIsSubmitted(true);
     toast({
       title: "Application submitted successfully!",
@@ -124,6 +129,8 @@ const JoinUs = () => {
     setIsSubmitting(false);
   }
 };
+
+
 
 
   if (isSubmitted) {
