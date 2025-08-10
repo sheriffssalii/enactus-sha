@@ -79,7 +79,6 @@ const quickLinks = () => {
             <h3 className="font-poppins font-semibold text-foreground mb-4">Contact</h3>
             <div className="space-y-2 text-muted-foreground font-roboto">
               <p>enactussha20@gmail.com</p>
-              <p>+20 115 270 9088</p>
               <p>Shorouk Academy<br />Cairo, Egypt</p>
             </div>
           </div>
@@ -87,11 +86,19 @@ const quickLinks = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground font-roboto text-sm">
-            © {currentYear} Enactus Shorouk Academy. All rights reserved.
-          </p>
+  <p className="text-muted-foreground font-roboto text-sm">
+    <a
+      href="https://www.linkedin.com/in/sherif-ali-90516b297/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-500 transition-colors duration-200 hover:underline"
+    >
+      Sherif Ali
+    </a>{' '}
+    @ © {currentYear} Enactus Shorouk Academy. All rights reserved.
+  </p>
         </div>
-      </div>
+</div>
     </footer>
   );
 };
