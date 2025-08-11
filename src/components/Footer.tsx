@@ -9,18 +9,22 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  
-const quickLinks = () => {
+// Smooth scroll to top function
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+const QuickLinks = () => {
     return (
         <div className="footer">
             <div className="quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
-                    <li><Link to="/teams" onClick={() => window.scrollTo(0, 0)}>Teams</Link></li>
-                    <li><Link to="/history" onClick={() => window.scrollTo(0, 0)}>Our History</Link></li>
-                    <li><Link to="/join" onClick={() => window.scrollTo(0, 0)}>Join Us</Link></li>
-                    <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
+                    <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
+                    <li><Link to="/teams" onClick={scrollToTop}>Teams</Link></li>
+                    <li><Link to="/history" onClick={scrollToTop}>Our History</Link></li>
+                    <li><Link to="/join" onClick={scrollToTop}>Join Us</Link></li>
+                    <li><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
                 </ul>
             </div>
         </div>
@@ -70,7 +74,7 @@ const quickLinks = () => {
           {/* Quick Links */}
             <div>
               <h3 className="font-poppins font-semibold text-foreground mb-4">Quick Links</h3>
-              {quickLinks()}
+              {QuickLinks()}
             </div>
 
 
