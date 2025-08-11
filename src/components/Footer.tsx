@@ -92,12 +92,12 @@ const QuickLinks = () => {
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
   <p className="text-muted-foreground font-roboto text-sm">
     <a
-      href="https://www.linkedin.com/in/sherif-ali-90516b297/"
+      href="https://www.linkedin.com/in/sheriffssalii/"
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-blue-500 transition-colors duration-200 hover:underline"
     >
-      Sherif Ali
+      sherifalizaid 
     </a>{' '}
     @  Enactus Shorouk Academy. All rights reserved © {currentYear}.
   </p>
