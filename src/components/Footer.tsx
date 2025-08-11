@@ -18,7 +18,7 @@ const QuickLinks = () => {
     return (
         <div className="footer">
             <div className="quick-links">
-                <h3>Quick Links</h3>
+                
                 <ul>
                     <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
                     <li><Link to="/teams" onClick={scrollToTop}>Teams</Link></li>
@@ -99,7 +99,7 @@ const QuickLinks = () => {
     >
       Sherif Ali
     </a>{' '}
-    @ © {currentYear} Enactus Shorouk Academy. All rights reserved.
+    @  Enactus Shorouk Academy. All rights reserved © {currentYear}.
   </p>
         </div>
 </div>

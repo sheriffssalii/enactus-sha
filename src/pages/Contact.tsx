@@ -34,12 +34,7 @@ const Contact = () => {
       info: "enactussha20@gmail.com",
       description: "Send us your questions or collaboration ideas"
     },
-    {
-      icon: Phone,
-      title: "Call Us",
-      info: "+20 115 270 9088",
-      description: "Available during business hours"
-    },
+   
     {
       icon: MapPin,
       title: "Visit Us",
@@ -102,34 +97,34 @@ const Contact = () => {
             Contact Information
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {contactInfo.map((contact, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                className="group"
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                      <contact.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-poppins font-semibold text-foreground mb-2">
-                      {contact.title}
-                    </h3>
-                    <p className="text-primary font-roboto font-medium mb-2">
-                      {contact.info}
-                    </p>
-                    <p className="text-sm text-muted-foreground font-roboto">
-                      {contact.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+         <div className="flex flex-wrap justify-center gap-6">
+  {contactInfo.map((contact, index) => (
+    <motion.div
+      key={index}
+      variants={itemVariants}
+      whileHover={{ scale: 1.02 }}
+      className="group w-full sm:w-64"
+    >
+      <Card className="h-full hover:shadow-lg transition-all duration-300">
+        <CardContent className="p-6 text-center">
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <contact.icon className="w-8 h-8 text-primary" />
           </div>
-        </motion.div>
+          <h3 className="text-lg font-poppins font-semibold text-foreground mb-2">
+            {contact.title}
+          </h3>
+          <p className="text-primary font-roboto font-medium mb-2">
+            {contact.info}
+          </p>
+          <p className="text-sm text-muted-foreground font-roboto">
+            {contact.description}
+          </p>
+        </CardContent>
+      </Card>
+    </motion.div>
+  ))}
+</div>
+</motion.div>
 
         {/* Social Media Section */}
         <motion.div

@@ -57,7 +57,7 @@ const History = () => {
       year: "2024",
       title: "10 Years of Impact",
       description:
-        "Celebrating a decade of social entrepreneurship with over 50,000 lives impacted and 15+ successful projects.",
+        "Celebrating a decade of social entrepreneurship with over 15+ successful projects.",
       icon: Calendar,
       highlight: true,
     },
