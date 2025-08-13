@@ -6,7 +6,7 @@ import { Calendar, Trophy, Users, Target } from "lucide-react";
 const History = () => {
   const timelineEvents = [
     {
-      year: "2014",
+      year: "2013",
       title: "Foundation",
       description:
         "Enactus Shorouk Academy was established with a vision to create positive social impact through entrepreneurial action.",
@@ -14,7 +14,7 @@ const History = () => {
       highlight: false,
     },
     {
-      year: "2016",
+      year: "2018",
       title: "First National Competition",
       description:
         "Our team participated in the first Enactus Egypt National Competition, gaining valuable experience and connections.",
@@ -22,10 +22,10 @@ const History = () => {
       highlight: false,
     },
     {
-      year: "2018",
+      year: "2019",
       title: "Community Expansion",
       description:
-        "Reached 100+ active members and launched our first major community development project.",
+        "Reached 200+ active members and launched our first major community development project.",
       icon: Users,
       highlight: false,
     },
@@ -41,23 +41,23 @@ const History = () => {
       year: "2022",
       title: "National Recognition",
       description:
-        "Achieved top 5 ranking in Enactus Egypt National Competition with our sustainable agriculture project.",
+        "Participated in the Enactus Egypt National Competition, showcasing our sustainable agriculture project on a national stage.",
       icon: Trophy,
-      highlight: true,
+      highlight: false,
     },
     {
       year: "2023",
-      title: "Excellence Award",
+      title: "First Place PepsiCo Award",
       description:
-        "Won 'Best Innovation Project' at the National Competition for our digital marketplace connecting rural farmers with urban consumers.",
+        "In 2023, our team proudly won the prestigious First Place Award, sponsored by PepsiCo, for our 'Recycle for Tomorrow' initiative -- a shining example of our innovation, dedication, and sustainable impact.",
       icon: Trophy,
       highlight: true,
     },
     {
       year: "2024",
-      title: "10 Years of Impact",
+      title: " 7 Years of Impact",
       description:
-        "Celebrating a decade of social entrepreneurship with over 15+ successful projects.",
+        "Marking our seventh consecutive year competing in the Enactus Egypt National Competition since 2018, continuing our commitment to social entrepreneurship and innovation.",
       icon: Calendar,
       highlight: true,
     },
@@ -65,26 +65,21 @@ const History = () => {
 
   const achievements = [
     {
-      title: "Top 5 National Ranking",
-      year: "2022 & 2023",
+      title: " 7 Years of Impact",
+      year: "2024",
       description:
-        "Consistently ranked among the top 5 teams in Egypt for two consecutive years",
+        "Seven consecutive years of competing in the Enactus Egypt National Competition since 2018",
     },
     {
-      title: "Best Innovation Project",
+      title: "First Place PepsiCo Award",
       year: "2023",
       description:
-        "National Competition winner for our digital agriculture marketplace platform",
+        "In 2023, our team won first place in PepsiCo's 'Recycle for Tomorrow' initiative for our innovative and sustainable impact.",
     },
-    {
-      title: "Social Impact Award",
-      year: "2022",
-      description:
-        "Recognized for outstanding community impact in sustainable agriculture",
-    },
+    
     {
       title: "Outstanding Presentation",
-      year: "2023",
+      year: "2024",
       description:
         "Excellence in presentation and storytelling at the National Competition",
     },
@@ -125,7 +120,7 @@ const History = () => {
             Our <span className="text-primary">Journey</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-roboto">
-            Ten years of social entrepreneurship, innovation, and impact. From humble beginnings
+            Thirteen years of social entrepreneurship, innovation, and impact. From humble beginnings
             to national recognition, here's our story.
           </p>
         </motion.div>
@@ -223,7 +218,7 @@ const History = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-poppins font-bold text-foreground mb-12 text-center">
-            Recent Achievements (2022-2023)
+            Recent Achievements (2022-2024)
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -273,7 +268,7 @@ const History = () => {
               </h3>
               <div className="flex flex-wrap justify-center items-center gap-6 md:gap-64">
                 <div>
-                  <div className="text-3xl font-poppins font-bold text-primary mb-2">10</div>
+                  <div className="text-3xl font-poppins font-bold text-primary mb-2">13</div>
                   <div className="text-sm text-muted-foreground font-roboto">Years</div>
                 </div>
                 <div>

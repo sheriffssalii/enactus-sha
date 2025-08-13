@@ -8,7 +8,7 @@ const Home = () => {
   const kpis = [
     { icon: Users, value: "200+", label: "Active Students" },
     { icon: Target, value: "15+", label: "Social Projects" },
-    { icon: Globe, value: "10", label: "Years of Impact" },
+    { icon: Globe, value: "13", label: "Years of Impact" },
   ];
 
   const containerVariants = {
@@ -33,10 +33,17 @@ const Home = () => {
   };
 
   return (
+    
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-primary/10 via-background to-accent/5">
-        <div className="container mx-auto">
+      <section className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative"
+      style={{
+    backgroundImage: "url('/HomePage.jpg')",
+  }}>
+          {/* Optional: dark overlay for better text readability */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
