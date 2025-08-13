@@ -1,41 +1,46 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
 const Season2025 = () => {
   const activities = [
     {
-      title: "First Bazaar",
-      description: "Our inaugural bazaar showcased student entrepreneurship and creativity, bringing together innovative products and services from our community.",
-      image: "/bazaar1.jpg"
+      title: "Meeting the Visionary",
+      description:
+        "An inspiring moment with the Co-Founder and CEO of Enactus Egypt, sharing insights, encouragement, and a vision for empowering young entrepreneurs to create real change.",
+      image: "/Presedintial board.jpg",
     },
     {
-      title: "Second Bazaar",
-      description: "Building on our first success, the second bazaar expanded our reach and impact, featuring even more diverse student ventures and social initiatives.",
-      image: "/bazaar2.jpg"
+      title: " General Orientation Training",
+      description:
+        "Our General Orientation Training brought together new and returning members to learn about Enactus Shorouk Academy’s mission, values, and upcoming season plans — building teamwork and inspiration from day one.",
+      image: "/got.jpg",
+    },
+    {
+      title: "First Bazaar",
+      description:
+        "Our inaugural bazaar showcased student entrepreneurship and creativity, bringing together innovative products and services from our community",
+      image: "/bazzar1.jpg",
     },
     {
       title: "Mini National Competition",
-      description: "An intensive preparation event that tested our presentation skills and project development, setting the stage for national competition excellence.",
-      image: "/mini-nc.jpg"
+      description:
+        "An intensive preparation event that tested our presentation skills and project development, setting the stage for national competition excellence.",
+      image: "/mini-nc.jpg",
     },
     {
       title: "National Competition",
-      description: "The pinnacle of our year - competing against Egypt's best Enactus teams, showcasing our social impact projects and entrepreneurial solutions.",
-      image: "/nc.jpg"
+      description:
+        "The pinnacle of our year - competing against Egypt's best Enactus teams, showcasing our social impact projects and entrepreneurial solutions.",
+      image: "/nc.jpg",
     },
     {
       title: "Orientation Day",
-      description: "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
-      image: "/orientation.jpg"
+      description:
+        "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
+      image: "/orientation.jpg",
     },
-    {
-      title: "Closing Ceremony",
-      description: "Celebrating our achievements, recognizing outstanding contributions, and reflecting on a year of transformative social impact.",
-      image: "/closing.jpg"
-    }
   ];
 
   const containerVariants = {
@@ -62,25 +67,28 @@ const Season2025 = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative"
+      <section
+        className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('/2025-hero.jpg')",
-        }}>
+          backgroundImage: "url('/LeadershipTraining.jpg')",
+        }}
+      >
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div className="relative container mx-auto">
+        <div className="relative z-10 container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-6">
-              2025 Season Recap
+           <h1 className="text-4xl md:text-6xl font-poppins font-bold text-foreground mb-6">
+               2025 Season
+              <span className="text-primary"> Recap</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-8 font-roboto">
+
+            <p className="text-xl md:text-2xl !text-white mb-8 font-roboto">
               A year of innovation, collaboration, and impact at Enactus Shorouk Academy.
             </p>
           </motion.div>
@@ -98,26 +106,23 @@ const Season2025 = () => {
               viewport={{ once: true }}
               className="max-w-6xl mx-auto"
             >
-              <motion.h2 
+              <motion.h2
                 variants={itemVariants}
-                className="text-3xl md:text-4xl font-poppins font-bold text-foreground mb-6 text-center"
+                className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6 text-center"
               >
                 {activity.title}
               </motion.h2>
-              
-              <motion.p 
+
+              <motion.p
                 variants={itemVariants}
-                className="text-lg text-muted-foreground mb-8 font-roboto text-center max-w-3xl mx-auto"
+                className="text-lg text-gray-200 mb-8 font-roboto text-center max-w-3xl mx-auto"
               >
                 {activity.description}
               </motion.p>
-              
-              <motion.div 
-                variants={itemVariants}
-                className="w-full"
-              >
-                <img 
-                  src={activity.image} 
+
+              <motion.div variants={itemVariants} className="w-full">
+                <img
+                  src={activity.image}
                   alt={activity.title}
                   className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
                 />
@@ -143,7 +148,7 @@ const Season2025 = () => {
               Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
             </p>
             <Link to="/join">
-              <Button variant="secondary" size="lg" className="font-poppins font-semibold">
+              <Button size="lg" className="font-poppins font-semibold text-lg px-8 py-3">
                 Join Our Next Season
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
