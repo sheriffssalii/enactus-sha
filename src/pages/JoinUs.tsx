@@ -10,8 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, CheckCircle } from "lucide-react";
-import { CalendarX2 } from "lucide-react";
+import { Loader2, CheckCircle, CalendarX2 } from "lucide-react";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -403,7 +402,7 @@ if (!formOpen) {
               </h3>
               <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm md:text-base text-muted-foreground font-roboto transition-colors duration-300">
                 <p>1. We'll review your application within 5 business days</p>
-                <p>2. Qualified candidates will be contacted for interviews</p>
+                <p>2. Candidates will be contacted for interviews</p>
                 <p>3. Final selections will be announced via WhatsApp</p>
                 <p>4. New members will receive onboarding information</p>
               </div>
