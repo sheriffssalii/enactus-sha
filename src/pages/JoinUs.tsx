@@ -136,20 +136,32 @@ const onSubmit = async (data: FormData) => {
 // ✅ FORM CLOSED VIEW
 if (!formOpen) {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 flex items-center justify-center">
-      <Card className="max-w-md w-full text-center shadow-lg border border-border bg-card dark:bg-card">
-        <CardContent className="p-6 sm:p-8 flex flex-col items-center">
-          <CalendarX2 className="h-12 w-12 sm:h-16 sm:w-16 text-muted-foreground mb-4" />
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-sm sm:max-w-md md:max-w-lg"
+      >
+        <Card className="w-full text-center shadow-xl border-2 border-border/50 bg-card/95 backdrop-blur-sm transition-colors duration-300">
+          <CardContent className="p-6 sm:p-8 md:p-10 flex flex-col items-center space-y-4 sm:space-y-6">
+            <div className="rounded-full bg-muted/50 p-4 sm:p-6 transition-colors duration-300">
+              <CalendarX2 className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 text-muted-foreground transition-colors duration-300" />
+            </div>
 
-          <h2 className="text-xl sm:text-2xl font-poppins font-bold text-foreground mb-2">
-            Applications Closed
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground font-roboto">
-            We’re not accepting applications right now.
-            Please check back later for updates.
-          </p>
-        </CardContent>
-      </Card>
+            <div className="space-y-2 sm:space-y-3">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-poppins font-bold text-foreground transition-colors duration-300">
+                Applications Closed
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-roboto leading-relaxed transition-colors duration-300">
+                We're not accepting applications right now.
+                <br className="hidden sm:block" />
+                Please check back later for updates.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
     </div>
   );
 }
@@ -158,26 +170,26 @@ if (!formOpen) {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-24 pb-16 px-4 flex items-center justify-center">
+      <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center w-full max-w-sm sm:max-w-md"
         >
-          <Card className="max-w-md mx-auto">
-            <CardContent className="p-8">
-              <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-              <h2 className="text-2xl font-poppins font-bold text-foreground mb-4">
+          <Card className="shadow-xl border-2 border-border/50 bg-card/95 backdrop-blur-sm transition-colors duration-300">
+            <CardContent className="p-6 sm:p-8 md:p-10">
+              <CheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-primary mx-auto mb-4 sm:mb-6 transition-colors duration-300" />
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-poppins font-bold text-foreground mb-4 sm:mb-6 transition-colors duration-300">
                 Application Submitted!
               </h2>
-              <p className="text-muted-foreground font-roboto mb-6">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-roboto mb-6 sm:mb-8 leading-relaxed transition-colors duration-300">
                 Thank you for your interest in joining Enactus Shorouk Academy. 
                 We'll review your application and contact you within 5 business days.
               </p>
               <Button 
                 onClick={() => setIsSubmitted(false)}
-                className="font-poppins"
+                className="font-poppins w-full sm:w-auto px-6 py-3 transition-all duration-300"
               >
                 Submit Another Application
               </Button>
@@ -189,19 +201,19 @@ if (!formOpen) {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
-      <div className="container mx-auto max-w-2xl">
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-xl sm:max-w-2xl lg:max-w-4xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-poppins font-bold text-foreground mb-6">
-            Join <span className="text-primary">Our Team</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-foreground mb-4 sm:mb-6 transition-colors duration-300">
+            Join <span className="text-primary transition-colors duration-300">Our Team</span>
           </h1>
-          <p className="text-xl text-muted-foreground font-roboto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-roboto leading-relaxed transition-colors duration-300 max-w-3xl mx-auto">
             Ready to make a difference? Apply to become part of our social entrepreneurship community.
           </p>
         </motion.div>
@@ -212,61 +224,61 @@ if (!formOpen) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl font-poppins text-center">
+          <Card className="shadow-xl border-2 border-border/50 bg-card/95 backdrop-blur-sm transition-colors duration-300">
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl font-poppins text-center text-foreground transition-colors duration-300">
                 Application Form
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <CardContent className="p-4 sm:p-6 md:p-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
                 {/* Personal Information */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-poppins font-semibold text-foreground">
+                <div className="space-y-4 sm:space-y-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-poppins font-semibold text-foreground transition-colors duration-300">
                     Personal Information
                   </h3>
                   
-                  <div>
-                    <Label htmlFor="fullName">Full Name *</Label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <Label htmlFor="fullName" className="text-sm sm:text-base text-foreground transition-colors duration-300">Full Name *</Label>
                     <Input
                       id="fullName"
                       {...register("fullName")}
-                      className="mt-1"
+                      className="mt-1 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300"
                       placeholder="Enter your full name"
                     />
                     {errors.fullName && (
-                      <p className="text-sm text-destructive mt-1">
+                      <p className="text-xs sm:text-sm text-destructive mt-1">
                         {errors.fullName.message}
                       </p>
                     )}
                   </div>
 
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <Label htmlFor="email" className="text-sm sm:text-base text-foreground transition-colors duration-300">Email Address *</Label>
                     <Input
                       id="email"
                       type="email"
                       {...register("email")}
-                      className="mt-1"
+                      className="mt-1 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300"
                       placeholder="Enter your email address"
                     />
                     {errors.email && (
-                      <p className="text-sm text-destructive mt-1">
+                      <p className="text-xs sm:text-sm text-destructive mt-1">
                         {errors.email.message}
                       </p>
                     )}
                   </div>
 
-                  <div>
-                    <Label htmlFor="phoneNumber">Phone Number *</Label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <Label htmlFor="phoneNumber" className="text-sm sm:text-base text-foreground transition-colors duration-300">Phone Number *</Label>
                     <Input
                       id="phoneNumber"
                       {...register("phoneNumber")}
-                      className="mt-1"
+                      className="mt-1 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300"
                       placeholder="Enter your phone number"
                     />
                     {errors.phoneNumber && (
-                      <p className="text-sm text-destructive mt-1">
+                      <p className="text-xs sm:text-sm text-destructive mt-1">
                         {errors.phoneNumber.message}
                       </p>
                     )}
@@ -274,19 +286,19 @@ if (!formOpen) {
                 </div>
 
                 {/* Team Selection */}
-                <div className="space-y-4">
+                <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <h3 className="text-lg font-poppins font-semibold text-foreground mb-2">
+                    <h3 className="text-base sm:text-lg md:text-xl font-poppins font-semibold text-foreground mb-2 transition-colors duration-300">
                       Team Selection *
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-4 transition-colors duration-300">
                       Select up to 3 teams you're interested in joining:
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {teams.map((team) => (
-                      <div key={team.id} className="flex items-center space-x-2">
+                      <div key={team.id} className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 rounded-lg border border-border/50 bg-muted/20 transition-all duration-300 hover:bg-muted/40">
                         <Checkbox
                           id={team.id}
                           checked={selectedTeams.includes(team.id)}
@@ -296,13 +308,14 @@ if (!formOpen) {
                           disabled={
                             !selectedTeams.includes(team.id) && selectedTeams.length >= 3
                           }
+                          className="transition-colors duration-300"
                         />
                         <Label
                           htmlFor={team.id}
-                          className={`text-sm ${
+                          className={`text-xs sm:text-sm font-roboto cursor-pointer transition-colors duration-300 ${
                             !selectedTeams.includes(team.id) && selectedTeams.length >= 3
                               ? "text-muted-foreground"
-                              : ""
+                              : "text-foreground"
                           }`}
                         >
                           {team.name}
@@ -311,34 +324,35 @@ if (!formOpen) {
                     ))}
                   </div>
 
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs sm:text-sm text-muted-foreground font-medium transition-colors duration-300">
                     Selected: {selectedTeams.length}/3 teams
                   </div>
 
                   {errors.teams && (
-                    <p className="text-sm text-destructive">
+                    <p className="text-xs sm:text-sm text-destructive">
                       {errors.teams.message}
                     </p>
                   )}
                 </div>
 
                 {/* Interview Slot */}
-                <div className="space-y-4">
-                  <h3 className="text-lg font-poppins font-semibold text-foreground">
+                <div className="space-y-4 sm:space-y-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-poppins font-semibold text-foreground transition-colors duration-300">
                     Interview Schedule *
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground transition-colors duration-300">
                     Choose one available interview slot:
                   </p>
 
                   <RadioGroup
                     value={interviewSlot}
                     onValueChange={(value) => setValue("interviewSlot", value as "slot1" | "slot2")}
+                    className="space-y-3 sm:space-y-4"
                   >
                     {interviewSlots.map((slot) => (
-                      <div key={slot.id} className="flex items-center space-x-2">
-                        <RadioGroupItem value={slot.id} id={slot.id} />
-                        <Label htmlFor={slot.id} className="text-sm">
+                      <div key={slot.id} className="flex items-center space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-lg border border-border/50 bg-muted/20 transition-all duration-300 hover:bg-muted/40">
+                        <RadioGroupItem value={slot.id} id={slot.id} className="transition-colors duration-300" />
+                        <Label htmlFor={slot.id} className="text-xs sm:text-sm font-roboto cursor-pointer text-foreground transition-colors duration-300">
                           {slot.label}
                         </Label>
                       </div>
@@ -346,17 +360,17 @@ if (!formOpen) {
                   </RadioGroup>
 
                   {errors.interviewSlot && (
-                    <p className="text-sm text-destructive">
+                    <p className="text-xs sm:text-sm text-destructive">
                       {errors.interviewSlot.message}
                     </p>
                   )}
                 </div>
 
                 {/* Submit Button */}
-                <div className="pt-6">
+                <div className="pt-4 sm:pt-6">
                   <Button
                     type="submit"
-                    className="w-full font-poppins font-semibold"
+                    className="w-full font-poppins font-semibold h-10 sm:h-12 text-sm sm:text-base transition-all duration-300"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -380,14 +394,14 @@ if (!formOpen) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12"
+          className="mt-8 sm:mt-10 md:mt-12"
         >
-          <Card className="bg-primary/5 border-primary/20">
-            <CardContent className="p-6 text-center">
-              <h3 className="text-xl font-poppins font-semibold text-foreground mb-4">
+          <Card className="bg-primary/5 border-primary/20 shadow-lg transition-colors duration-300">
+            <CardContent className="p-4 sm:p-6 md:p-8 text-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-poppins font-semibold text-foreground mb-4 sm:mb-6 transition-colors duration-300">
                 What Happens Next?
               </h3>
-              <div className="space-y-2 text-sm text-muted-foreground font-roboto">
+              <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm md:text-base text-muted-foreground font-roboto transition-colors duration-300">
                 <p>1. We'll review your application within 5 business days</p>
                 <p>2. Qualified candidates will be contacted for interviews</p>
                 <p>3. Final selections will be announced via WhatsApp</p>
