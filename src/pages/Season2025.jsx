@@ -68,13 +68,13 @@ const Season2025 = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section
-        className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative"
+        className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative min-h-[50vh] md:min-h-[60vh] flex items-center"
         style={{
           backgroundImage: "url('/LeadershipTraining.jpg')",
         }}
       >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+        {/* Enhanced dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
 
         <div className="relative z-10 container mx-auto">
           <motion.div
@@ -83,12 +83,12 @@ const Season2025 = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-           <h1 className="text-4xl md:text-6xl font-poppins font-bold text-foreground mb-6">
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4 md:mb-6 leading-tight">
                2025 Season
               <span className="text-primary"> Recap</span>
             </h1>
 
-            <p className="text-xl md:text-2xl !text-white mb-8 font-roboto">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 font-roboto leading-relaxed px-4">
               A year of innovation, collaboration, and impact at Enactus Shorouk Academy.
             </p>
           </motion.div>
@@ -108,14 +108,14 @@ const Season2025 = () => {
             >
               <motion.h2
                 variants={itemVariants}
-                className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6 text-center"
+                className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold text-foreground mb-4 md:mb-6 text-center"
               >
                 {activity.title}
               </motion.h2>
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg text-gray-200 mb-8 font-roboto text-center max-w-3xl mx-auto"
+                className="text-base sm:text-lg text-muted-foreground mb-6 md:mb-8 font-roboto text-center max-w-3xl mx-auto px-4"
               >
                 {activity.description}
               </motion.p>
@@ -124,7 +124,7 @@ const Season2025 = () => {
                 <img
                   src={activity.image}
                   alt={activity.title}
-                  className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+                  className="w-full h-48 sm:h-56 md:h-72 lg:h-96 object-cover rounded-lg shadow-lg"
                 />
               </motion.div>
             </motion.div>
@@ -141,10 +141,10 @@ const Season2025 = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-primary-foreground mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold text-primary-foreground mb-4 md:mb-6 px-4">
               Thank You to Our Amazing Team
             </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 font-roboto">
+            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-6 md:mb-8 font-roboto px-4 max-w-3xl mx-auto">
               Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
             </p>
             <Link to="/join">
