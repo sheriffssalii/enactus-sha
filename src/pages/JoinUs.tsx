@@ -11,6 +11,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, CheckCircle } from "lucide-react";
+import { CalendarX2 } from "lucide-react";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -25,6 +26,8 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const JoinUs = () => {
+
+  const formOpen = true; // change to false when applications are closed
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
@@ -130,6 +133,26 @@ const onSubmit = async (data: FormData) => {
   }
 };
 
+// ✅ FORM CLOSED VIEW
+if (!formOpen) {
+  return (
+    <div className="min-h-screen pt-24 pb-16 px-4 flex items-center justify-center">
+      <Card className="max-w-md w-full text-center shadow-lg border border-border bg-card dark:bg-card">
+        <CardContent className="p-6 sm:p-8 flex flex-col items-center">
+          <CalendarX2 className="h-12 w-12 sm:h-16 sm:w-16 text-muted-foreground mb-4" />
+
+          <h2 className="text-xl sm:text-2xl font-poppins font-bold text-foreground mb-2">
+            Applications Closed
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground font-roboto">
+            We’re not accepting applications right now.
+            Please check back later for updates.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
 
 
 
@@ -375,6 +398,7 @@ const onSubmit = async (data: FormData) => {
         </motion.div>
       </div>
     </div>
+    
   );
 };
 
