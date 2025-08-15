@@ -71,8 +71,7 @@ const Home = () => {
               We See
               <span className="text-primary"> Opportunity</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-roboto">
+            <p className="text-xl md:text-2xl text-muted-foreground text-white mb-4 md:mb-6 leading-tight mb-8 font-roboto">
               Enactus Shorouk Academy empowers students to create positive social impact 
               through entrepreneurial action and innovation.
             </p>

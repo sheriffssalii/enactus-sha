@@ -88,7 +88,7 @@ const Season2025 = () => {
               <span className="text-primary"> Recap</span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-offwhite mb-8 font-roboto leading-relaxed px-4">
+            <p className="text-xl md:text-2xl text-muted-foreground text-white mb-4 md:mb-6 leading-tight mb-8 font-roboto">
               A year of innovation, collaboration, and impact at Enactus Shorouk Academy.
             </p>
           </motion.div>
