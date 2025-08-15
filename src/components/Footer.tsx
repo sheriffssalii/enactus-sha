@@ -25,6 +25,8 @@ const QuickLinks = () => {
                     <li><Link to="/history" onClick={scrollToTop}>Our History</Link></li>
                     <li><Link to="/join" onClick={scrollToTop}>Join Us</Link></li>
                     <li><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
+                    <li><Link to="/season2025" onClick={scrollToTop}>Season 2025</Link></li>
+
                 </ul>
             </div>
         </div>

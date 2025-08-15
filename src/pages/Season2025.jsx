@@ -39,7 +39,7 @@ const Season2025 = () => {
       title: "Orientation Day",
       description:
         "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
-      image: "/orientation.jpg",
+      image: "/Orientation.jpg",
     },
   ];
 
