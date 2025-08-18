@@ -97,23 +97,26 @@ const quickLinks = [
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground font-roboto text-sm text-center md:text-left">
-            Built with ❤️ by{' '}
-            <a
-              href="https://www.linkedin.com/in/sheriffssalii/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors duration-200 underline decoration-primary/30 hover:decoration-primary"
-            >
-              sherifalizaid
-            </a>
-          </p>
-          <p className="text-muted-foreground font-roboto text-sm text-center md:text-right">
-            © {currentYear} Enactus Shorouk Academy. All rights reserved.
-          </p>
-        </div>
+    {/* Bottom Bar */}
+<div className="border-t border-border mt-8 pt-8 flex items-center gap-2">
+  <p className="text-muted-foreground font-roboto text-sm text-left">
+    <a
+      href="https://www.linkedin.com/in/sheriffssalii/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-primary transition-colors duration-200 underline decoration-primary/30 hover:decoration-primary"
+    >
+      sherifalizaid
+    </a>
+  </p>
+  <span className="text-muted-foreground">|</span>
+  <p className="text-muted-foreground font-roboto text-sm text-left">
+    © {currentYear} Enactus Shorouk Academy. All rights reserved.
+  </p>
+</div>
+
+
+
 </div>
     </footer>
   );
