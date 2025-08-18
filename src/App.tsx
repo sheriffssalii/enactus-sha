@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import SkipLink from "./components/SkipLink";
 import Home from "./pages/Home";
 import Teams from "./pages/Teams";
 import History from "./pages/History";
@@ -26,9 +27,10 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <SkipLink />
           <div className="min-h-screen flex flex-col font-roboto transition-colors duration-300">
             <Navigation />
-            <main className="flex-1">
+            <main id="main-content" className="flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/teams" element={<Teams />} />

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const socialLinks = [
@@ -8,22 +9,22 @@ const Contact = () => {
       name: "Facebook",
       icon: Facebook,
       url: "https://www.facebook.com/Enactus.ShA",
-      color: "hover:text-blue-600",
-      bgColor: "hover:bg-blue-50"
+      color: "hover:text-blue-600 dark:hover:text-blue-400",
+      bgColor: "hover:bg-blue-50 dark:hover:bg-blue-950/30"
     },
     {
       name: "Instagram",
       icon: Instagram,
       url: "https://www.instagram.com/enactus_shoroukacademy/",
-      color: "hover:text-pink-600",
-      bgColor: "hover:bg-pink-50"
+      color: "hover:text-pink-600 dark:hover:text-pink-400",
+      bgColor: "hover:bg-pink-50 dark:hover:bg-pink-950/30"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
       url: "https://linkedin.com/company/enactus-alshorouk-academy",
-      color: "hover:text-blue-700",
-      bgColor: "hover:bg-blue-50"
+      color: "hover:text-blue-700 dark:hover:text-blue-300",
+      bgColor: "hover:bg-blue-50 dark:hover:bg-blue-950/30"
     }
   ];
 
@@ -142,13 +143,14 @@ const Contact = () => {
             achievements, and behind-the-scenes moments.
           </p>
 
-          <div className="flex justify-center items-center space-x-8">
+          <div className="flex justify-center items-center space-x-6 md:space-x-8">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Follow us on ${link.name}`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -157,10 +159,10 @@ const Contact = () => {
                   transition: { duration: 0.2 }
                 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-16 h-16 rounded-full bg-card border border-border flex items-center justify-center transition-all duration-300 ${link.bgColor} ${link.color} hover:shadow-lg group`}
+                className={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-card border-2 border-border flex items-center justify-center transition-all duration-300 ${link.bgColor} ${link.color} hover:shadow-lg hover:border-primary/50 group`}
               >
-                <link.icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
-                <span className="sr-only">{link.name}</span>
+                <link.icon className="w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:scale-110" />
+                <span className="sr-only">Follow us on {link.name}</span>
               </motion.a>
             ))}
           </div>
@@ -182,14 +184,15 @@ const Contact = () => {
                   Join us in creating positive social change through entrepreneurial action. 
                   Whether you're a student, partner, or supporter, there's a place for you in our community.
                 </p>
-                <motion.a
-                  href="/join"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-md font-poppins font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Join Our Community
-                </motion.a>
+                <Link to="/join">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-primary text-primary-foreground px-8 py-3 rounded-md font-poppins font-semibold hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >
+                    Join Our Community
+                  </motion.button>
+                </Link>
               </CardContent>
             </Card>
           </motion.div>

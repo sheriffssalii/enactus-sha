@@ -102,15 +102,16 @@ const Season2025 = () => {
                   <div className="rounded-3xl overflow-hidden shadow-lg">
                     <img
                       src={activity.image}
-                      alt={activity.title}
+                      alt={`${activity.title} - Enactus Shorouk Academy event showcasing student entrepreneurship and community impact`}
                       className="w-full h-72 md:h-80 lg:h-96 object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="md:w-1/2 p-4 text-center md:text-left">
-                  <h3 className="text-8xl md:text-3xl font-bold font-poppins mb-4 text-foreground">
+                  <h3 className="text-2xl md:text-3xl font-bold font-poppins mb-4 text-foreground">
                     {activity.title}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground font-roboto">

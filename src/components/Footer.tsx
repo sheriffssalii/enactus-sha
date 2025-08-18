@@ -14,24 +14,14 @@ const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-const QuickLinks = () => {
-    return (
-        <div className="footer">
-            <div className="quick-links">
-                
-                <ul>
-                    <li><Link to="/" onClick={scrollToTop}>Home</Link></li>
-                    <li><Link to="/teams" onClick={scrollToTop}>Teams</Link></li>
-                    <li><Link to="/history" onClick={scrollToTop}>Our History</Link></li>
-                    <li><Link to="/join" onClick={scrollToTop}>Join Us</Link></li>
-                    <li><Link to="/contact" onClick={scrollToTop}>Contact</Link></li>
-                    <li><Link to="/season2025" onClick={scrollToTop}>Season 2025</Link></li>
-
-                </ul>
-            </div>
-        </div>
-    );
-};
+const quickLinks = [
+  { path: "/", label: "Home" },
+  { path: "/teams", label: "Teams" },
+  { path: "/history", label: "Our History" },
+  { path: "/join", label: "Join Us" },
+  { path: "/contact", label: "Contact" },
+  { path: "/season2025", label: "Season 2025" },
+];
   const socialLinks = [
     { name: "Facebook", icon: SiFacebook, url: "https://www.facebook.com/Enactus.ShA" },
     { name: "Instagram", icon: SiInstagram, url: "https://www.instagram.com/enactus_shoroukacademy/" },
@@ -47,7 +37,12 @@ const QuickLinks = () => {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8">
-                 <img src="/EnactusLogo.png" alt="Enactus Logo" className="w-full h-full rounded-full" />
+                 <img 
+                   src="/EnactusLogo.png" 
+                   alt="Enactus Shorouk Academy Logo" 
+                   className="w-full h-full rounded-full object-contain" 
+                   loading="lazy"
+                 />
               </div>
               <span className="font-poppins font-semibold text-lg text-foreground">
                 Enactus Shorouk Academy
@@ -74,10 +69,22 @@ const QuickLinks = () => {
           </div>
 
           {/* Quick Links */}
-            <div>
-              <h3 className="font-poppins font-semibold text-foreground mb-4">Quick Links</h3>
-              {QuickLinks()}
-            </div>
+          <div>
+            <h3 className="font-poppins font-semibold text-foreground mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    onClick={scrollToTop}
+                    className="text-muted-foreground font-roboto hover:text-primary transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
 
           {/* Contact Info */}
@@ -91,18 +98,21 @@ const QuickLinks = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-  <p className="text-muted-foreground font-roboto text-sm">
-    <a
-      href="https://www.linkedin.com/in/sheriffssalii/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-blue-500 transition-colors duration-200 hover:underline"
-    >
-      sherifalizaid 
-    </a>{' '}
-    @  Enactus Shorouk Academy. All rights reserved © {currentYear}.
-  </p>
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground font-roboto text-sm text-center md:text-left">
+            Built with ❤️ by{' '}
+            <a
+              href="https://www.linkedin.com/in/sheriffssalii/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors duration-200 underline decoration-primary/30 hover:decoration-primary"
+            >
+              sherifalizaid
+            </a>
+          </p>
+          <p className="text-muted-foreground font-roboto text-sm text-center md:text-right">
+            © {currentYear} Enactus Shorouk Academy. All rights reserved.
+          </p>
         </div>
 </div>
     </footer>

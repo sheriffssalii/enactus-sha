@@ -27,8 +27,13 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
          <div className="w-8 h-8">
-             <img src="/EnactusLogo.png" alt="Enactus Logo" className="w-full h-full rounded-full" />
-        </div>
+              <img 
+                src="/EnactusLogo.png" 
+                alt="Enactus Shorouk Academy Logo" 
+                className="w-full h-full rounded-full object-contain" 
+                loading="eager"
+              />
+         </div>
             <span className="font-poppins font-semibold text-lg text-foreground">
               Enactus SHA
             </span>
@@ -64,9 +69,11 @@ const Navigation = () => {
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <button
-              className="p-2"
+              className="p-2 rounded-lg hover:bg-secondary/80 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? (
                 <X className="w-6 h-6 text-foreground" />
@@ -81,11 +88,14 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden"
+              role="menu"
+              aria-labelledby="mobile-menu-button"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
@@ -93,10 +103,11 @@ const Navigation = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-2 font-poppins font-medium transition-colors ${
+                    role="menuitem"
+                    className={`block px-4 py-2 font-poppins font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset ${
                       isActive(item.path)
-                        ? "text-primary bg-primary/10 rounded-md"
-                        : "text-foreground hover:text-primary hover:bg-primary/5 rounded-md"
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                   >
                     {item.label}

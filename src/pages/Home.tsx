@@ -56,13 +56,14 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-8"
             >
-<div className="w-15 h-10 bg-white rounded-full p-1">
-  <img 
-    src="/EnactusLogo.png" 
-    alt="Enactus Logo" 
-    className="w-full h-full rounded-full object-contain" 
-  />
-</div>
+                <div className="w-15 h-10 bg-white rounded-full p-1">
+                  <img 
+                    src="/EnactusLogo.png" 
+                    alt="Enactus Shorouk Academy Logo - Empowering student entrepreneurs" 
+                    className="w-full h-full rounded-full object-contain" 
+                    loading="eager"
+                  />
+                </div>
 
       
            </motion.div>
@@ -71,7 +72,7 @@ const Home = () => {
               We See
               <span className="text-primary"> Opportunity</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground text-white mb-4 md:mb-6 leading-tight mb-8 font-roboto">
+            <p className="text-xl md:text-2xl text-offwhite mb-6 leading-tight font-roboto">
               Enactus Shorouk Academy empowers students to create positive social impact 
               through entrepreneurial action and innovation.
             </p>

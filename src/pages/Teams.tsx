@@ -8,6 +8,7 @@ import {
   DollarSign, 
   Megaphone 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Teams = () => {
   const teams = [
@@ -167,14 +168,15 @@ const Teams = () => {
                 Each team offers unique opportunities for growth and impact. You can choose up to 
                 3 teams that align with your interests and skills when you apply to join us.
               </p>
-              <motion.a
-                href="/join"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-md font-poppins font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Apply to Join Our Teams
-              </motion.a>
+              <Link to="/join">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-primary text-primary-foreground px-8 py-3 rounded-md font-poppins font-semibold hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  Apply to Join Our Teams
+                </motion.button>
+              </Link>
             </CardContent>
           </Card>
         </motion.div>
