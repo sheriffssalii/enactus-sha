@@ -47,6 +47,12 @@ const Season2025 = () => {
         "The pinnacle of our year - competing against Egypt's best Enactus teams, showcasing our social impact projects and entrepreneurial solutions.",
       image: "/nc.jpg",
     },
+    {
+      title: "Closing day",
+      description:
+        "As we close this remarkable season, we come together to celebrate the milestones, the challenges we’ve overcome, and the unforgettable memories we’ve created. The Closing Day marks not just an end, but a new beginning—filled with gratitude, inspiration, and excitement for what’s ahead.",
+      image: "/ClosingDay.jpg",
+    },
   ];
 
   return (
