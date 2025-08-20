@@ -139,12 +139,13 @@ const Season2025 = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-poppins font-bold text-primary-foreground mb-4 md:mb-6">
-              Thank You to Our Amazing Team
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins mb-4 text-foreground">
+                Thank You to Our Amazing Team
             </h2>
-            <p className="text-lg sm:text-xl text-primary-foreground/90 mb-6 font-roboto max-w-3xl mx-auto">
-              Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
+            <p className="text-base md:text-lg text-muted-foreground font-roboto mb-6">
+                Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
             </p>
+
             <Link to="/join">
               <Button size="lg" className="font-poppins font-semibold text-lg px-8 py-3">
                 Join Our Next Season
