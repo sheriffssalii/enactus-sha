@@ -86,7 +86,7 @@ const TeamStructure = () => {
       className="bg-card hover:bg-accent/5 border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
     >
       {/* Profile Image Placeholder */}
-      <div className="aspect-[4/5] bg-muted rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+      <div className="aspect-square bg-muted rounded-xl mb-4 flex items-center justify-center overflow-hidden">
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
           <div className="w-8 h-8 bg-primary/20 rounded-full"></div>
         </div>
