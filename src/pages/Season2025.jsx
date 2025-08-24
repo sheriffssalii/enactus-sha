@@ -16,7 +16,7 @@ const Season2025 = () => {
       title: "Enactus Egypt Coordinator Visit",
       description:
         "A valuable session with our dedicated Enactus Egypt Coordinator, providing guidance, support, and strategic direction to help our team excel and achieve our goals throughout the season.",
-      image: "/coordinator-visit.jpg",
+      image: "/EnactusCoordinator.jpg",
     },
     {
       title: "Orientation Day",
@@ -46,13 +46,13 @@ const Season2025 = () => {
       title: "Mini National Competition",
       description:
         "An intensive preparation event that tested our presentation skills and project development, setting the stage for national competition excellence.",
-      image: "/mini-nc.jpg",
+      image: "/MiniNC.jpg",
     },
     {
       title: "National Competition",
       description:
-        "The pinnacle of our year - competing against Egypt's best Enactus teams, showcasing our social impact projects and entrepreneurial solutions.",
-      image: "/nc.jpg",
+        "The pinnacle of our year – attending the National Competition as guests, witnessing Egypt’s best Enactus teams showcase their projects and entrepreneurial solutions while gaining inspiration for our future journey.",
+      image: "/NC25.jpg",
     },
     {
       title: "Closing day",
@@ -68,7 +68,7 @@ const Season2025 = () => {
       <section
         className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative min-h-[50vh] md:min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: "url('/LeadershipTraining.jpg')",
+          backgroundImage: "url('/LeadershipTrainingEdit.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>

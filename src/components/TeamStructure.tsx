@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 interface TeamMember {
   title: string;
   name?: string;
+  image?: string; // new field for profile image
 }
 
 interface Team {
@@ -12,67 +13,67 @@ interface Team {
 
 const TeamStructure = () => {
   const executiveBoard: TeamMember[] = [
-    { title: "President" },
-    { title: "Vice President" },
-    { title: "Vice President" },
+    { title: "President", image: "President.jpg" },
+    { title: "Vice President", image: "VicePresident.jpg" },
+    { title: "Vice President", image: "VicePresident2.jpg" },
   ];
 
   const teams: Team[] = [
     {
       name: "HR Team",
       members: [
-        { title: "Head" },
-        { title: "Vice Head" },
-        { title: "Vice Head" },
-        { title: "Performance Management Leader" },
-        { title: "Performance Management Leader" },
-        { title: "L&D Leader" },
+        { title: "Head", image: "HRHead.jpg" },
+        { title: "Vice Head", image: "HRViceHead.jpg" },
+        { title: "Vice Head", image: "HRViceHead2.jpg" },
+        { title: "Performance Management Leader", image: "PMLeader.jpg" },
+        { title: "Performance Management Leader", image: "PMLeader2.jpg" },
+        { title: "L&D Leader", image: "L&DLeader.jpg" },
       ],
     },
     {
       name: "Marketing Team",
       members: [
-        { title: "Head" },
-        { title: "Vice Head" },
-        { title: "Leader" },
+        { title: "Head", image: "MarketingHead.jpg" },
+        { title: "Vice Head", image: "MarketingViceHead.jpg" },
+        { title: "Leader", image: "MarketingLeader.jpg" },
       ],
     },
     {
       name: "Presentation Team",
       members: [
-        { title: "Head" },
-        { title: "Leader" },
-        { title: "Leader" },
+        { title: "Head", image: "PresentationHead.jpg" },
+        { title: "Leader", image: "PresentationLeader.jpg" },
+        { title: "Leader", image: "PresentationLeader2.jpg" },
       ],
     },
     {
       name: "PR & FR Team",
       members: [
-        { title: "Head" },
-        { title: "Vice Head" },
-        { title: "Event Leader" },
-        { title: "PR Leader" },
+        { title: "Head", image: "PRHead.jpg" },
+        { title: "Vice Head", image: "PRViceHead.jpg" },
+        { title: "Event Leader", image: "EventLeader.jpg" },
+        { title: "PR Leader", image: "PRLeader.jpg" },
       ],
     },
     {
       name: "Multimedia Team",
       members: [
-        { title: "Head" },
-        { title: "Vice Head" },
-        { title: "Vice Head" },
-        { title: "Design Leader" },
-        { title: "Videography Leader" },
+        { title: "Head", image: "MultimediaHead.jpg" },
+        { title: "Vice Head", image: "MMViceHead.jpg" },
+        { title: "Vice Head", image: "MMViceHead2.jpg" },
+        { title: "Design Leader", image: "DesignLeader.jpg" },
+        { title: "Videography Leader", image: "VideoLeader.jpg" },
       ],
     },
     {
       name: "Project Team",
       members: [
-        { title: "Head" },
-        { title: "Head" },
-        { title: "Vice Head" },
-        { title: "Vice Head" },
-        { title: "R&D Leader" },
-        { title: "Execution Leader" },
+        { title: "Head", image: "ProjectHead.jpg" },
+        { title: "Head", image: "ProjectHead2.jpg" },
+        { title: "Vice Head", image: "ProjectViceHead.jpg" },
+        { title: "Vice Head", image: "ProjectViceHead2.jpg" },
+        { title: "R&D Leader", image: "R&DLeader.jpg" },
+        { title: "Execution Leader", image: "ExecutionLeader.jpg" },
       ],
     },
   ];
@@ -85,13 +86,21 @@ const TeamStructure = () => {
       transition={{ duration: 0.4, delay: index * 0.1 }}
       className="bg-card hover:bg-accent/5 border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
     >
-      {/* Profile Image Placeholder */}
+      {/* Profile Image */}
       <div className="aspect-square bg-muted rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-          <div className="w-8 h-8 bg-primary/20 rounded-full"></div>
-        </div>
+        {member.image ? (
+          <img
+            src={member.image}
+            alt={member.title}
+            className="w-full h-full object-cover rounded-xl"
+          />
+        ) : (
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary/20 rounded-full"></div>
+          </div>
+        )}
       </div>
-      
+
       {/* Position Title */}
       <h4 className="text-sm font-semibold text-foreground text-center leading-tight">
         {member.title}
@@ -127,7 +136,7 @@ const TeamStructure = () => {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold font-poppins mb-8 text-center text-foreground"
           >
-            Executive Board
+            Presidential Board
           </motion.h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {executiveBoard.map((member, index) => (
