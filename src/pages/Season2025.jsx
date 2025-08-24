@@ -13,6 +13,12 @@ const Season2025 = () => {
       image: "/Presedintial board.jpg",
     },
     {
+      title: "Enactus Egypt Coordinator Visit",
+      description:
+        "A valuable session with our dedicated Enactus Egypt Coordinator, providing guidance, support, and strategic direction to help our team excel and achieve our goals throughout the season.",
+      image: "/coordinator-visit.jpg",
+    },
+    {
       title: "Orientation Day",
       description:
         "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
