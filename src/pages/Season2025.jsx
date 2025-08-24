@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import TeamStructure from "@/components/TeamStructure";
 
 const Season2025 = () => {
   const activities = [
@@ -129,6 +130,9 @@ const Season2025 = () => {
           </div>
         </div>
       </section>
+
+      {/* Team Structure */}
+      <TeamStructure />
 
       {/* Call to Action */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-accent">
