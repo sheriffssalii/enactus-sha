@@ -150,7 +150,7 @@ const Season2025 = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold font-poppins mb-4 text-foreground">
-                Thank You to Our Amazing Team
+                Thanks to Our Amazing Team
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-roboto mb-6">
                 Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
