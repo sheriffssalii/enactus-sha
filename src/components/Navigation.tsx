@@ -28,7 +28,7 @@ const Navigation = () => {
       label: "Seasons",
       children: [
         { path: "/season2025", label: "2025" },
-        // add more later
+        { path: "/season2026", label: "2026" },
       ],
     },
   ];
