@@ -14,6 +14,7 @@ import History from "./pages/History";
 import JoinUs from "./pages/JoinUs";
 import Contact from "./pages/Contact";
 import Season2025 from "./pages/Season2025";
+import Season2026 from "./pages/Season2026";
 import NotFound from "./pages/NotFound";
 import { Analytics } from '@vercel/analytics/react';
 
@@ -37,8 +38,9 @@ const App = () => (
                 <Route path="/history" element={<History />} />
                 <Route path="/join" element={<JoinUs />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
                 <Route path="/season2025" element={<Season2025 />} />
+                <Route path="/season2026" element={<Season2026 />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />

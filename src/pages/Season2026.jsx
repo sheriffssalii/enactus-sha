@@ -4,7 +4,43 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import TeamStructure from "@/components/TeamStructure";
 
-const Season2025 = () => {
+// Toggle to control if Season 2026 content is available
+const SEASON_2026_ACTIVE = false;
+
+const ComingSoon = () => (
+  <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+    <div className="text-center max-w-2xl mx-auto px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-4xl md:text-6xl font-poppins font-bold text-foreground mb-6">
+          Season <span className="text-primary">2026</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-roboto">
+          Coming Soon
+        </p>
+        <p className="text-lg text-muted-foreground mb-8 font-roboto">
+          Get ready for another year of innovation, collaboration, and impact at Enactus Shorouk Academy.
+        </p>
+        <Link to="/join">
+          <Button size="lg" className="font-poppins font-semibold text-lg px-8 py-3">
+            Join Our Community
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </Link>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const Season2026 = () => {
+  // If season is not active, show coming soon page
+  if (!SEASON_2026_ACTIVE) {
+    return <ComingSoon />;
+  }
+
   const activities = [
     {
       title: "Meeting the Visionary",
@@ -27,7 +63,7 @@ const Season2025 = () => {
     {
       title: "General Orientation Training",
       description:
-        "Our General Orientation Training brought together new and returning members to learn about Enactus Shorouk Academy’s mission, values, and upcoming season plans — building teamwork and inspiration from day one.",
+        "Our General Orientation Training brought together new and returning members to learn about Enactus Shorouk Academy's mission, values, and upcoming season plans — building teamwork and inspiration from day one.",
       image: "/got.jpg",
     },
     {
@@ -51,13 +87,13 @@ const Season2025 = () => {
     {
       title: "National Competition",
       description:
-        "The pinnacle of our year – attending the National Competition as guests, witnessing Egypt’s best Enactus teams showcase their projects and entrepreneurial solutions while gaining inspiration for our future journey.",
+        "The pinnacle of our year – attending the National Competition as guests, witnessing Egypt's best Enactus teams showcase their projects and entrepreneurial solutions while gaining inspiration for our future journey.",
       image: "/NC25.jpg",
     },
     {
       title: "Closing day",
       description:
-        "As we close this remarkable season, we come together to celebrate the milestones, the challenges we’ve overcome, and the unforgettable memories we’ve created. The Closing Day marks not just an end, but a new beginning—filled with gratitude, inspiration, and excitement for what’s ahead.",
+        "As we close this remarkable season, we come together to celebrate the milestones, the challenges we've overcome, and the unforgettable memories we've created. The Closing Day marks not just an end, but a new beginning—filled with gratitude, inspiration, and excitement for what's ahead.",
       image: "/ClosingDay.jpg",
     },
   ];
@@ -81,7 +117,7 @@ const Season2025 = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-white mb-4 md:mb-6 leading-tight">
-              2025 Season
+              2026 Season
               <span className="text-primary"> Recap</span>
             </h1>
 
@@ -153,7 +189,7 @@ const Season2025 = () => {
                 Thanks to Our Amazing Team
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-roboto mb-6">
-                Together, we've made 2025 a year of incredible impact and growth. Ready to join our mission?
+                Together, we've made 2026 a year of incredible impact and growth. Ready to join our mission?
             </p>
 
             <Link to="/join">
@@ -169,4 +205,4 @@ const Season2025 = () => {
   );
 };
 
-export default Season2025;
+export default Season2026;
