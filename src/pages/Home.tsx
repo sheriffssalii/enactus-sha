@@ -248,12 +248,20 @@ const Home = () => {
             <p className="text-xl text-primary-foreground/90 mb-8 font-roboto">
               Join our community of student entrepreneurs and social innovators.
             </p>
-            <Link to="/join">
-              <Button variant="secondary" size="lg" className="font-poppins font-semibold">
-                Apply Now
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/join">
+                <Button variant="secondary" size="lg" className="font-poppins font-semibold">
+                  Apply Now
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button variant="outline" size="lg" className="font-poppins font-semibold bg-white text-primary hover:bg-white/90">
+                  Team Login
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

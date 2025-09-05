@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn, LogOut } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { useAuth } from "@/contexts/AuthContext";
 
 // ⬇️ shadcn/ui imports for dropdown
 import {
@@ -17,6 +18,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSeasonsOpen, setIsSeasonsOpen] = useState(false); // mobile seasons toggle
   const location = useLocation();
+  const { user, profile, signOut } = useAuth();
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -108,6 +110,32 @@ const Navigation = () => {
                 </Link>
               )
             )}
+            
+            {/* Auth Button */}
+            {user && profile ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="gap-2">
+                    {profile.role.replace('_', ' ').toUpperCase()}
+                    <ChevronDown className="w-4 h-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={signOut} className="gap-2">
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link to="/login">
+                <Button variant="outline" className="gap-2">
+                  <LogIn className="w-4 h-4" />
+                  Team Login
+                </Button>
+              </Link>
+            )}
+            
             <ThemeToggle />
           </div>
 
@@ -199,6 +227,29 @@ const Navigation = () => {
                       {item.label}
                     </Link>
                   )
+                )}
+                
+                {/* Mobile Auth */}
+                {user && profile ? (
+                  <button
+                    onClick={() => {
+                      signOut();
+                      setIsOpen(false);
+                    }}
+                    className="flex items-center gap-2 w-full px-4 py-2 font-poppins font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Logout ({profile.role.replace('_', ' ').toUpperCase()})
+                  </button>
+                ) : (
+                  <Link
+                    to="/login"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-2 px-4 py-2 font-poppins font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md"
+                  >
+                    <LogIn className="w-4 h-4" />
+                    Team Login
+                  </Link>
                 )}
               </div>
             </motion.div>
