@@ -256,7 +256,7 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/login">
-                <Button variant="outline" size="lg" className="font-poppins font-semibold bg-white text-primary hover:bg-white/90">
+                <Button variant="secondary" size="lg" className="font-poppins font-semibold">
                   Team Login
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

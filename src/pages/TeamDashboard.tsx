@@ -64,16 +64,24 @@ const TeamDashboard: React.FC<TeamDashboardProps> = ({ teamName, teamDisplayName
       </div>
     );
   }
+const roleDisplayNames: { [key: string]: string } = {
+  hr: "HR Head",
+  marketing: "Marketing Head",
+  multimedia: "Multimedia Head",
+  presentation: "Presentation Head",
+  project_management: "Project Management Head",
+  pr_finance: "PR & Finance Head",
+};
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-20">
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">{teamDisplayName} Dashboard</h1>
               <p className="text-muted-foreground">
-                Welcome back, {profile?.email}
+                Welcome back, {roleDisplayNames[profile?.role || ""] || "Member"}
               </p>
             </div>
             <Button onClick={signOut} variant="outline" className="gap-2">

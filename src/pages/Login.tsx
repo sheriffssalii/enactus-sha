@@ -89,17 +89,6 @@ const Login: React.FC = () => {
             </Button>
           </form>
           
-          <div className="mt-6 p-4 bg-muted rounded-lg">
-            <h3 className="font-semibold text-sm mb-2">Demo Accounts:</h3>
-            <div className="text-xs space-y-1 text-muted-foreground">
-              <p>presentation@enactussha.com</p>
-              <p>project@enactussha.com</p>
-              <p>hr@enactussha.com</p>
-              <p>marketing@enactussha.com</p>
-              <p>multimedia@enactussha.com</p>
-              <p>prfinance@enactussha.com</p>
-            </div>
-          </div>
         </CardContent>
       </Card>
     </div>
