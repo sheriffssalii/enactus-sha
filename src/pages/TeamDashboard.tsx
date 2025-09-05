@@ -76,22 +76,15 @@ const roleDisplayNames: { [key: string]: string } = {
   return (
     <div className="min-h-screen bg-background pt-20">
       <header className="border-b bg-card">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold">{teamDisplayName} Dashboard</h1>
-              <p className="text-muted-foreground">
-                Welcome back, {roleDisplayNames[profile?.role || ""] || "Member"}
-              </p>
-            </div>
-            <Button onClick={signOut} variant="outline" className="gap-2">
-              <LogOut size={16} />
-              Logout
-            </Button>
-          </div>
-        </div>
+  <div className="container mx-auto px-4 py-4">
+    <div className="flex flex-col items-center text-center">
+      <h1 className="text-2xl font-bold">{teamDisplayName} Dashboard</h1>
+      <p className="font-bold text-muted-foreground">
+          Welcome back, <span className="font-extrabold">{roleDisplayNames[profile?.role || ""] || "Member"}</span>
+      </p>
+    </div>
+  </div>
       </header>
-
       <main className="container mx-auto px-4 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
