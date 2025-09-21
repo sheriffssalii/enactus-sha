@@ -100,6 +100,7 @@ const onSubmit = async (data: FormData) => {
       secondTeam: selectedTeamNames[1] || "",
       thirdTeam: selectedTeamNames[2] || "",
       interviewSlot: interviewSlots.find(slot => slot.id === data.interviewSlot)?.label || "",
+      usherName: "" 
     };
 
     // Your deployed Apps Script Web App URL
