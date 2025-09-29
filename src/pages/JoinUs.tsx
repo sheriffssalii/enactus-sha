@@ -58,8 +58,8 @@ const JoinUs = () => {
   ];
 
   const interviewSlots = [
-    { id: "slot1", label: "Saturday, March 16th - 10:00 AM to 2:00 PM" },
-    { id: "slot2", label: "Sunday, March 17th - 2:00 PM to 6:00 PM" },
+    { id: "slot1", label: "Friday" },
+    { id: "slot2", label: "Saturday" },
   ];
 
   const handleTeamChange = (teamId: string, checked: boolean) => {
