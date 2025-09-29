@@ -37,7 +37,7 @@ const Season2025 = () => {
       image: "/LeadershipTraining.jpg",
     },
     {
-      title: "First Bazaar",
+      title: "Our Bazaar",
       description:
         "Our inaugural bazaar showcased student entrepreneurship and creativity, bringing together innovative products and services from our community.",
       image: "/bazzar1.jpg",
