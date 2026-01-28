@@ -68,7 +68,7 @@ const Season2025 = () => {
       <section
         className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative min-h-[50vh] md:min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: "url('/new-cover.jpg')",
+          backgroundImage: "url('/SeasonPageCover.png')",
         }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>

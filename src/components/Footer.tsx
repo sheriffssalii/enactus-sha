@@ -25,7 +25,7 @@ const quickLinks = [
   const socialLinks = [
     { name: "Facebook", icon: SiFacebook, url: "https://www.facebook.com/Enactus.ShA" },
     { name: "Instagram", icon: SiInstagram, url: "https://www.instagram.com/enactus_shoroukacademy/" },
-    { name: "LinkedIn", icon: SiLinkedin, url: "https://linkedin.com/company/enactus-alshorouk-academy" },
+    { name: "LinkedIn", icon: SiLinkedin, url: "https://www.linkedin.com/company/enactus2026-el-shorouk-academy" },
     { name: "TikTok", icon: SiTiktok, url: "https://www.tiktok.com/@enactus.sh.a?is_from_webapp=1&sender_device=pc" },
   ];
 

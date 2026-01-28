@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import TeamStructure from "@/components/TeamStructure";
+import TeamStructure26 from "@/components/TeamStructure26";
 
 // Toggle to control if Season 2026 content is available
-const SEASON_2026_ACTIVE = false;
+const SEASON_2026_ACTIVE = true;
 
 const ComingSoon = () => (
   <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
@@ -42,59 +42,18 @@ const Season2026 = () => {
   }
 
   const activities = [
-    {
-      title: "Meeting the Visionary",
-      description:
-        "An inspiring moment with the Co-Founder and CEO of Enactus Egypt, sharing insights, encouragement, and a vision for empowering young entrepreneurs to create real change.",
-      image: "/Presedintial board.jpg",
-    },
-    {
-      title: "Enactus Egypt Coordinator Visit",
-      description:
-        "A valuable session with our dedicated Enactus Egypt Coordinator, providing guidance, support, and strategic direction to help our team excel and achieve our goals throughout the season.",
-      image: "/EnactusCoordinator.jpg",
-    },
+    
     {
       title: "Orientation Day",
       description:
         "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
-      image: "/Orientation.jpg",
-    },
-    {
-      title: "General Orientation Training",
-      description:
-        "Our General Orientation Training brought together new and returning members to learn about Enactus Shorouk Academy's mission, values, and upcoming season plans — building teamwork and inspiration from day one.",
-      image: "/got.jpg",
+      image: "/orientation26.jpeg",
     },
     {
       title: "Leadership Training",
       description:
         "An empowering workshop designed to strengthen leadership skills, teamwork, and communication — preparing members to lead impactful projects with confidence.",
-      image: "/LeadershipTraining.jpg",
-    },
-    {
-      title: "First Bazaar",
-      description:
-        "Our inaugural bazaar showcased student entrepreneurship and creativity, bringing together innovative products and services from our community.",
-      image: "/bazzar1.jpg",
-    },
-    {
-      title: "Mini National Competition",
-      description:
-        "An intensive preparation event that tested our presentation skills and project development, setting the stage for national competition excellence.",
-      image: "/MiniNC.jpg",
-    },
-    {
-      title: "National Competition",
-      description:
-        "The pinnacle of our year – attending the National Competition as guests, witnessing Egypt's best Enactus teams showcase their projects and entrepreneurial solutions while gaining inspiration for our future journey.",
-      image: "/NC25.jpg",
-    },
-    {
-      title: "Closing day",
-      description:
-        "As we close this remarkable season, we come together to celebrate the milestones, the challenges we've overcome, and the unforgettable memories we've created. The Closing Day marks not just an end, but a new beginning—filled with gratitude, inspiration, and excitement for what's ahead.",
-      image: "/ClosingDay.jpg",
+      image: "/Leadership26.jpeg",
     },
   ];
 
@@ -104,7 +63,7 @@ const Season2026 = () => {
       <section
         className="pt-24 pb-16 px-4 bg-cover bg-center bg-no-repeat relative min-h-[50vh] md:min-h-[60vh] flex items-center"
         style={{
-          backgroundImage: "url('/new-cover.jpg')",
+          backgroundImage: "url('/SeasonPageCover.png')",
         }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>
@@ -153,7 +112,7 @@ const Season2026 = () => {
                       src={activity.image}
                       alt={`${activity.title} - Enactus Shorouk Academy event showcasing student entrepreneurship and community impact`}
                       className="w-full h-72 md:h-80 lg:h-96 object-cover"
-                      loading="lazy"
+                      loading="eager"
                     />
                   </div>
                 </div>
@@ -174,7 +133,7 @@ const Season2026 = () => {
       </section>
 
       {/* Team Structure */}
-      <TeamStructure />
+      <TeamStructure26 />
 
       {/* Call to Action */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-accent">
@@ -191,7 +150,6 @@ const Season2026 = () => {
             <p className="text-base md:text-lg text-muted-foreground font-roboto mb-6">
                 Together, we've made 2026 a year of incredible impact and growth. Ready to join our mission?
             </p>
-
             <Link to="/join">
               <Button size="lg" className="font-poppins font-semibold text-lg px-8 py-3">
                 Join Our Next Season
