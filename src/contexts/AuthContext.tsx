@@ -36,18 +36,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const { toast } = useToast();
 
   const fetchProfile = async (userId: string) => {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .single();
-
-      if (error) throw error;
-      setProfile(data);
-    } catch (error) {
-      console.error('Error fetching profile:', error);
-    }
+    // TODO: Create profiles table in Supabase and uncomment this code
+    // try {
+    //   const { data, error } = await supabase
+    //     .from('profiles')
+    //     .select('*')
+    //     .eq('id', userId)
+    //     .single();
+    //
+    //   if (error) throw error;
+    //   setProfile(data);
+    // } catch (error) {
+    //   console.error('Error fetching profile:', error);
+    // }
+    console.log('Profile fetch disabled - profiles table not yet created');
   };
 
   useEffect(() => {
