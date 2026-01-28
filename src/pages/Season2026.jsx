@@ -114,14 +114,14 @@ const Season2026 = () => {
               <span className="text-sm font-medium text-primary">New Season</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-foreground mb-6 leading-tight">
               Season{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 2026
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-white/80 mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
               A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
             </p>
 
@@ -138,11 +138,11 @@ const Season2026 = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/20"
+                  className="flex flex-col items-center bg-card/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-border"
                 >
                   <stat.icon className="w-5 h-5 text-primary mb-2" />
-                  <span className="text-2xl md:text-3xl font-bold text-white">{stat.value}</span>
-                  <span className="text-xs md:text-sm text-white/60">{stat.label}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</span>
+                  <span className="text-xs md:text-sm text-muted-foreground">{stat.label}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -288,20 +288,20 @@ const Season2026 = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-              className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <Sparkles className="w-8 h-8 text-white" />
-            </motion.div>
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <Sparkles className="w-8 h-8 text-primary-foreground" />
+              </motion.div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6 text-primary-foreground">
               Thanks to Our Amazing Team
             </h2>
-            <p className="text-lg md:text-xl text-white/90 font-roboto mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/90 font-roboto mb-8 leading-relaxed">
               Together, we've made 2026 a year of incredible impact and growth. Ready to be part of our mission?
             </p>
             <motion.div
