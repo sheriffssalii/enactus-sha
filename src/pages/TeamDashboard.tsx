@@ -29,20 +29,23 @@ const TeamDashboard: React.FC<TeamDashboardProps> = ({ teamName, teamDisplayName
   }, []);
 
   const fetchTeamMembers = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('team_members')
-        .select('*')
-        .eq('team', teamName)
-        .order('total_points', { ascending: false });
-
-      if (error) throw error;
-      setMembers(data || []);
-    } catch (error) {
-      console.error('Error fetching team members:', error);
-    } finally {
-      setLoading(false);
-    }
+    // TODO: Create team_members table in Supabase and uncomment this code
+    // try {
+    //   const { data, error } = await supabase
+    //     .from('team_members')
+    //     .select('*')
+    //     .eq('team', teamName)
+    //     .order('total_points', { ascending: false });
+    //
+    //   if (error) throw error;
+    //   setMembers(data || []);
+    // } catch (error) {
+    //   console.error('Error fetching team members:', error);
+    // } finally {
+    //   setLoading(false);
+    // }
+    console.log('Team members fetch disabled - team_members table not yet created');
+    setLoading(false);
   };
 
   const getTeamStats = () => {
