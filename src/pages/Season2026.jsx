@@ -48,7 +48,7 @@ const Season2026 = () => {
         "Welcoming new members to the Enactus family, introducing them to our mission, values, and the exciting journey ahead.",
       image: "/orientation26.jpeg",
       icon: Users,
-      date: "October 2025",
+      date: "November 2025",
     },
     {
       title: "Leadership Training",
@@ -56,7 +56,7 @@ const Season2026 = () => {
         "An empowering workshop designed to strengthen leadership skills, teamwork, and communication — preparing members to lead impactful projects with confidence.",
       image: "/Leadership26.jpeg",
       icon: Target,
-      date: "November 2025",
+      date: "December 2025",
     },
   ];
 
