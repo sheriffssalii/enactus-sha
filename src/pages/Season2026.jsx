@@ -114,14 +114,14 @@ const Season2026 = () => {
               <span className="text-sm font-medium text-primary">New Season</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-card-foreground mb-6 leading-tight">
               Season{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 2026
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-card-foreground/80 mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
               A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
             </p>
 
@@ -138,10 +138,10 @@ const Season2026 = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="flex flex-col items-center bg-card/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-border"
+                  className="flex flex-col items-center bg-background/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-border"
                 >
                   <stat.icon className="w-5 h-5 text-primary mb-2" />
-                  <span className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-card-foreground">{stat.value}</span>
                   <span className="text-xs md:text-sm text-muted-foreground">{stat.label}</span>
                 </motion.div>
               ))}
@@ -264,7 +264,7 @@ const Season2026 = () => {
         
         {/* Decorative Elements */}
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          className="absolute top-0 right-0 w-96 h-96 bg-background/10 rounded-full blur-3xl"
           animate={{ 
             x: [0, 30, 0],
             y: [0, -30, 0]
@@ -272,7 +272,7 @@ const Season2026 = () => {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+          className="absolute bottom-0 left-0 w-64 h-64 bg-background/10 rounded-full blur-3xl"
           animate={{ 
             x: [0, -20, 0],
             y: [0, 20, 0]
@@ -293,7 +293,7 @@ const Season2026 = () => {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
+                className="w-16 h-16 bg-primary-foreground/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
               >
                 <Sparkles className="w-8 h-8 text-primary-foreground" />
               </motion.div>
@@ -311,7 +311,7 @@ const Season2026 = () => {
               <Link to="/join">
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 font-poppins font-semibold text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+                  className="bg-background text-foreground hover:bg-background/90 font-poppins font-semibold text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
                   Join Our Next Season
                   <ArrowRight className="ml-2 w-5 h-5" />
