@@ -61,7 +61,7 @@ const Season2026 = () => {
   ];
 
   const stats = [
-    { value: "50+", label: "Team Members", icon: Users },
+    { value: "200+", label: "Team Members", icon: Users },
     { value: "6", label: "Active Teams", icon: Sparkles },
     { value: "2", label: "Major Events", icon: Calendar },
   ];
