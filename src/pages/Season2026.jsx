@@ -121,32 +121,34 @@ const Season2026 = () => {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
-              A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
-            </p>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
+  A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
+</p>
+
 
             {/* Stats Row */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-6 md:gap-10 mt-10"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="flex flex-col items-center bg-card/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-border"
-                >
-                  <stat.icon className="w-5 h-5 text-primary mb-2" />
-                  <span className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</span>
-                  <span className="text-xs md:text-sm text-muted-foreground">{stat.label}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5, duration: 0.6 }}
+  className="flex flex-wrap justify-center gap-6 md:gap-10 mt-10 bg-gradient-to-r from-gray-900/80 via-gray-800/70 to-gray-900/80 p-8 rounded-3xl shadow-lg backdrop-blur-sm"
+>
+  {stats.map((stat, index) => (
+    <motion.div
+      key={stat.label}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
+      className="flex flex-col items-center bg-gray-900/60 backdrop-blur-md rounded-2xl px-6 py-4 border border-gray-700 hover:scale-105 transition-transform duration-300"
+    >
+      <stat.icon className="w-5 h-5 text-primary mb-2" />
+      <span className="text-2xl md:text-3xl font-bold text-white">{stat.value}</span>
+      <span className="text-xs md:text-sm text-gray-400">{stat.label}</span>
+    </motion.div>
+  ))}
+</motion.div>
+</motion.div>
+
         </div>
       </section>
 
@@ -258,69 +260,67 @@ const Season2026 = () => {
       <TeamStructure26 />
 
       {/* Enhanced Call to Action */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-accent"></div>
-        
-        {/* Decorative Elements */}
-        <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-          animate={{ 
-            x: [0, 30, 0],
-            y: [0, -30, 0]
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-          animate={{ 
-            x: [0, -20, 0],
-            y: [0, 20, 0]
-          }}
-          transition={{ duration: 6, repeat: Infinity }}
-        />
+     <section className="py-28 px-4">
+  <div className="container mx-auto">
+    
+    {/* Full Width Rectangle */}
+    <div className="
+      w-full
+      rounded-3xl
+      bg-primary
+      text-primary-foreground
+      px-6 md:px-16
+      py-16 md:py-20
+      text-center
+      shadow-xl
+      transition-colors duration-300
+    ">
 
-        <div className="container mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-                className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
-              >
-                <Sparkles className="w-8 h-8 text-primary-foreground" />
-              </motion.div>
+      {/* Icon */}
+      <div className="mx-auto mb-8 flex h-18 w-18 items-center justify-center rounded-full bg-primary-foreground/20">
+        <Sparkles className="h-9 w-9" />
+      </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6 text-primary-foreground">
-              Thanks to Our Amazing Team
-            </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/90 font-roboto mb-8 leading-relaxed">
-              Together, we've made 2026 a year of incredible impact and growth. Ready to be part of our mission?
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/join">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 font-poppins font-semibold text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
-                >
-                  Join Our Next Season
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Title */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6">
+        Thanks to Our Amazing Team
+      </h2>
+
+      {/* Description */}
+      <p className="mx-auto max-w-3xl text-lg md:text-xl font-roboto mb-12 leading-relaxed text-primary-foreground/90">
+        Together, we're shaping 2026 into a year of bold innovation and unstoppable growth. Ready to join us and be part of the future?
+      </p>
+
+      {/* CTA Button */}
+      <Link to="/join">
+        <button className="
+          inline-flex items-center justify-center gap-3
+          min-h-[72px]
+          py-4
+          px-12 md:px-16
+          text-lg md:text-xl
+          font-semibold
+          rounded-full
+          bg-background text-foreground
+          shadow-lg
+          transition-all duration-300
+          hover:scale-105
+          focus-visible:outline-none
+          focus-visible:ring-2
+          focus-visible:ring-primary
+          focus-visible:ring-offset-2
+          focus-visible:ring-offset-background
+        ">
+          Join Our Next Season
+          <ArrowRight className="h-6 w-6" />
+        </button>
+      </Link>
+
+    </div>
+  </div>
+</section>
+
+
     </div>
   );
 };
