@@ -114,13 +114,14 @@ const Season2026 = () => {
               <span className="text-sm font-medium text-primary">New Season</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-card-foreground mb-6 leading-tight">
               Season{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 2026
               </span>
             </h1>
 
+<<<<<<< HEAD
             <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
   A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
 </p>
@@ -149,6 +150,34 @@ const Season2026 = () => {
 </motion.div>
 </motion.div>
 
+=======
+            <p className="text-lg md:text-xl lg:text-2xl text-card-foreground/80 mb-8 leading-relaxed font-roboto max-w-2xl mx-auto">
+              A year of innovation, collaboration, and transformative impact at Enactus Shorouk Academy.
+            </p>
+
+            {/* Stats Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-wrap justify-center gap-6 md:gap-10 mt-10"
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
+                  className="flex flex-col items-center bg-background/80 backdrop-blur-md rounded-2xl px-6 py-4 border border-border"
+                >
+                  <stat.icon className="w-5 h-5 text-primary mb-2" />
+                  <span className="text-2xl md:text-3xl font-bold text-card-foreground">{stat.value}</span>
+                  <span className="text-xs md:text-sm text-muted-foreground">{stat.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+>>>>>>> bb2b4cb35e263e7f08c6d2853eff73cc3e6d1b36
         </div>
       </section>
 
@@ -260,6 +289,7 @@ const Season2026 = () => {
       <TeamStructure26 />
 
       {/* Enhanced Call to Action */}
+<<<<<<< HEAD
      <section className="py-28 px-4">
   <div className="container mx-auto">
     
@@ -321,6 +351,71 @@ const Season2026 = () => {
 </section>
 
 
+=======
+      <section className="py-20 px-4 relative overflow-hidden">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-accent"></div>
+        
+        {/* Decorative Elements */}
+        <motion.div
+          className="absolute top-0 right-0 w-96 h-96 bg-background/10 rounded-full blur-3xl"
+          animate={{ 
+            x: [0, 30, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-0 left-0 w-64 h-64 bg-background/10 rounded-full blur-3xl"
+          animate={{ 
+            x: [0, -20, 0],
+            y: [0, 20, 0]
+          }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+
+        <div className="container mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto"
+          >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+                className="w-16 h-16 bg-primary-foreground/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <Sparkles className="w-8 h-8 text-primary-foreground" />
+              </motion.div>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-6 text-primary-foreground">
+              Thanks to Our Amazing Team
+            </h2>
+            <p className="text-lg md:text-xl text-primary-foreground/90 font-roboto mb-8 leading-relaxed">
+              Together, we've made 2026 a year of incredible impact and growth. Ready to be part of our mission?
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/join">
+                <Button 
+                  size="lg" 
+                  className="bg-background text-foreground hover:bg-background/90 font-poppins font-semibold text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+                >
+                  Join Our Next Season
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+>>>>>>> bb2b4cb35e263e7f08c6d2853eff73cc3e6d1b36
     </div>
   );
 };
