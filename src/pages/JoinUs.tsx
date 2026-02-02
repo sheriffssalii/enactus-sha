@@ -26,7 +26,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const JoinUs = () => {
 
-  const formOpen = false; // change to false when applications are closed
+  const formOpen = true; // change to false when applications are closed
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
@@ -50,11 +50,10 @@ const JoinUs = () => {
 
   const teams = [
     { id: "hr", name: "Human Resources" },
-    { id: "multimedia", name: "Multimedia" },
     { id: "project-management", name: "Project Management" },
     { id: "presentation", name: "Presentation" },
     { id: "pr-finance", name: "Public Relations & Finance" },
-    { id: "marketing", name: "Marketing" },
+    { id: "marketing", name: "Branding" },
   ];
 
   const interviewSlots = [
@@ -108,7 +107,6 @@ const onSubmit = async (data: FormData) => {
 
     await fetch(googleScriptURL, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
