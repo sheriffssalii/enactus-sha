@@ -103,7 +103,7 @@ const onSubmit = async (data: FormData) => {
     };
 
     // Your deployed Apps Script Web App URL
-    const googleScriptURL = "https://script.google.com/macros/s/AKfycbzdyYFSsV74qpd8ciNtJapzVBMtbk0S3UNBcYeLehZzARF2gRSRxa7yqHohyH_aYwb5Rw/exec";
+    const googleScriptURL = "https://script.google.com/macros/s/AKfycbwaFgbjWJ0bI6QROqKA3gFoxG0fdxuVdYDfZjUg4sKffIflZ5kaT0RM2jnkZp0QzWiq/exec";
 
     await fetch(googleScriptURL, {
       method: "POST",
