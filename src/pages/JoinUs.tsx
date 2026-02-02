@@ -105,13 +105,12 @@ const onSubmit = async (data: FormData) => {
     // Your deployed Apps Script Web App URL
     const googleScriptURL = "https://script.google.com/macros/s/AKfycbwaFgbjWJ0bI6QROqKA3gFoxG0fdxuVdYDfZjUg4sKffIflZ5kaT0RM2jnkZp0QzWiq/exec";
 
-    await fetch(googleScriptURL, {
+    await fetch("/api/proxy", {
   method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify(formData),
 });
+
 
 
     setIsSubmitted(true);
