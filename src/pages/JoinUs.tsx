@@ -26,7 +26,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const JoinUs = () => {
 
-  const formOpen = true; // change to false when applications are closed
+  const formOpen = false; // change to false when applications are closed
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
